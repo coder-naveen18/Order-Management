@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+    <div class="container pt-5" >
+        <div class= "card pt-4">
+            <div class= "pt-2 text-center">
+                <h2>
+        
+                    Order Request Page
+                        
+                </h2>
+    </div>
+
+{% endblock  %}
+
+{% block content %}
+
+        
+        <div class="container pt-2 ">
+            <form method = "post" enctype = 'multipart/form-data'>
+                {% csrf_token %}
+                {{orders.as_p}}
+                <button class = "btn btn-warning" type="submit" style= "width: 1270px; height:40px;">Submit</button>
+            </form>
+            <br>
+                    
+        </div>
+
+{% endblock  %}

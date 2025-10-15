@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+<div class="container pt-2" style="background-color: #8ac1e8ff; text-align: center;">
+    <h2>Request Orders List</h2>
+</div>
+{% endblock  %}
+
+{% block content %}
+
+<div class="d-flex flex-wrap justify-content-start">
+    {% for order in orders %}
+        <div class="card m-2" style="width: 18rem;">
+            <div class="card-body">
+                <img src="{{order.image.url}}" class="card-img-top" alt="item_image">
+                <h5 class="card-title">{{order.name}}</h5>
+                <p class="card-text">{{order.description}}</p>
+                <a href="{% url 'order-fulfilled' order.pk %}" class="btn btn-primary">Mark As Fulfilled</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock  %}
+
